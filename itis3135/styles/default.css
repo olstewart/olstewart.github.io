@@ -6,27 +6,24 @@ body {
     background-color: #ecffe1;
     color: #002957;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 main{
     background-color: #9dfff2;
     max-width: 750px;
     margin: 0 auto;
-    margin-top: -20px;
-    padding-bottom: 50px;
-    padding-top: 60px;
-    padding-right: 10px;
-    padding-left: 10px;
+    height: 100vh;
+    padding: 150px 10px 150px 50px;
 }
 
 footer, header {
     background-color: #002957;
-    width: 101%;
+    width: 100vw;
     text-align: center;
     position: fixed;
-    margin-left: -10px;
     color:#ecffe1;
-    line-height: 5px;
 }
 
 footer{
@@ -41,8 +38,16 @@ header{
     padding-bottom: 13px;
 }
 
-footer a {
+footer a, header a {
     color: #9dfff2;
+}
+
+footer a:active, header a:active{
+    color: #2376a0;
+}
+
+footer a:visited, header a:visited{
+    color: #76ff9d;
 }
 
 
