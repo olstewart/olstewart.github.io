@@ -1,19 +1,17 @@
 h1, h2, h3{
     text-align: center;
 }
-h2{
-    padding-top: 150px;
-}
+
 body {
-    background-color: #ecffe1;
+    background-color: #9dfff2;
     color: #002957;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
+    padding-top: 250px;
     margin: 0;
 }
 
 main{
-    background-color: #9dfff2;
     max-width: 750px;
     margin: 0 auto;
     height: 120vh;
