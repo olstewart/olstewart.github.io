@@ -1,7 +1,9 @@
 h1, h2, h3{
     text-align: center;
 }
-
+h2{
+    padding-top: 150px;
+}
 body {
     background-color: #ecffe1;
     color: #002957;
@@ -14,8 +16,7 @@ main{
     background-color: #9dfff2;
     max-width: 750px;
     margin: 0 auto;
-    height: 100vh;
-    padding: 150px 10px 150px 10px;
+    height: 120vh;
 }
 
 footer, header {
