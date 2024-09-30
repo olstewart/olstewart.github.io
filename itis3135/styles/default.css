@@ -50,6 +50,9 @@ footer a:visited, header a:visited{
     color: #76ff9d;
 }
 
+header nav:last-of-type{
+    font-size: smaller;
+}
 
 figcaption{
     font-style: italic;
