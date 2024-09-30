@@ -1,0 +1,84 @@
+.comic-sans-text{
+    font-size: 250px;
+    font-family: "Comic Sans MS";
+    color: blue;
+}
+
+.papyrus-text{
+    font-family: "Papyrus";
+    color: #cabcad;
+}
+
+.completely-unreadable{
+    background-color: red;
+    color: #e00000;
+}
+
+.jonkler-burgers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.jonkler-birger:nth-of-type(odd){
+    border: solid 50px purple;
+    border-radius: 30%;
+}
+.jonkler-birger:nth-of-type(even){
+    border: solid 50px lime;
+    border-radius: 30%;
+}
+
+#div{
+    height: 50px;
+}
+
+@keyframes png{
+    0%{
+        transform: rotate(0deg);
+        margin-left: inherit;
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+        margin-left: 90vw;
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    90%{
+        transform: rotate(300deg);
+    }
+    95%{
+        transform: rotate(330deg);
+    }
+    98%{
+        background-color: rgb(38, 92, 70);
+    }
+    100%{
+        transform: rotate(360deg);
+        margin-left: inherit;
+    }
+}
+
+#png{
+    animation-name: png;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+ol{
+    width: 400px;
+    background-color: black;
+    color: grey;
+    margin: auto 90;
+}
+
+.otherdiv{
+    height: 2px;
+}
