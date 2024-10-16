@@ -6,7 +6,7 @@ body {
     background-color: #9dfff2;
     color: #002957;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 250px 0 250px;
+    padding: 250px 10px;
     margin: 0;
 }
 
@@ -33,6 +33,19 @@ footer{
 header{
     top: 0;
     padding-bottom: 13px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 8px 0;
+}
+
+a{
+    text-decoration-style: none;
+    color:#002957;
 }
 
 footer a, header a {
