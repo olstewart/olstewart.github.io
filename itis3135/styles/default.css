@@ -6,7 +6,7 @@ body {
     background-color: #9dfff2;
     color: #002957;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 250px 10px;
+    padding: 100px 10px;
     margin: 0;
 }
 
@@ -104,4 +104,17 @@ tr:nth-of-type(odd){
 
 tr:nth-of-type(even){
     background-color: #fffcdd;
+}
+
+/* Rule Overrides For Laptops / Small Screens */
+@media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+    body{padding: 100px 10px;}
+}
+/* Rule Overrides For Tablet Devices */
+@media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+    body{padding: 150px 10px;}
+}
+/* Rule Overrides For Mobile Devices */
+@media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+    body{padding: 200px 10px;}
 }
