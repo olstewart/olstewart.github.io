@@ -6,15 +6,13 @@ body {
     background-color: #9dfff2;
     color: #002957;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 0;
-    padding-top: 250px;
+    padding: 250px 0 250px;
     margin: 0;
 }
 
 main{
     max-width: 750px;
     margin: 0 auto;
-    height: 120vh;
 }
 
 footer, header {
@@ -71,4 +69,26 @@ figcaption{
 
 #introductionTop{
     margin-bottom: 3%;
+}
+
+table{
+    margin: 0 auto;
+}
+
+td{
+    padding: 2px 10px 5px;
+}
+
+th{
+    background-color: #002957;
+    color:#fffda4;
+    padding: 4px 10px;
+}
+
+tr:nth-of-type(odd){
+    background-color: #fffda4;
+}
+
+tr:nth-of-type(even){
+    background-color: #fffcdd;
 }
