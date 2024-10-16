@@ -24,7 +24,7 @@
                 <li>Chip Munkington cmunkington@gmail.com 36</li>
                 <li>Ratty Rodentia rrodentia@gmail.com 37</li>
             </ol>
-            <h3>Table 1.</h3>
+            <h3>Data in Simple Table</h3>
             <table>
                 <tr>
                     <th>Employee Name</th>
@@ -83,64 +83,76 @@
                 </tr>
             </table>
 
-            <h3>Table 2.</h3>
-            <table>
-                <tr>
-                    <th>Employee Name</th>
-                    <th>Email</th>
-                    <th>Years Employed</th>
-                </tr>
-                <tr>
-                    <td>Mario Mario</td>
-                    <td>mmario@yahoo.com</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>Luigi Mario</td>
-                    <td>lmario@yahoo.com</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>Bones Skullton</td>
-                    <td>bskullton@gmail.com</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Marrow Blackbeak</td>
-                    <td>mblackbeak@gmail.com</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Kathrine Whiskers</td>
-                    <td>kwhiskers@gmail.com</td>
-                    <td>12</td>
-                </tr>
-                <tr>
-                    <td>Spike Prickly</td>
-                    <td>sprickly@gmail.com</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>Carlos Baza</td>
-                    <td>cbaza@aol.com</td>
-                    <td>24</td>
-                </tr>
-                <tr>
-                    <td>Callie Baza</td>
-                    <td>calbaza@gmail.com</td>
-                    <td>9</td>
-                </tr>
-                <tr>
-                    <td>Chip Munkington</td>
-                    <td>cmunkington@gmail.com</td>
-                    <td>36</td>
-                </tr>
-                <tr>
-                    <td>Ratty Rodentia</td>
-                    <td>rrodentia@gmail.com</td>
-                    <td>37</td>
-                </tr>
-            </table>
+            <h3>Data in Complex Table</h3>
+            <figure>
+                <table>
+                    <tr>
+                        <th>Employee Type</th>
+                        <th>Employee Name</th>
+                        <th>Email</th>
+                        <th>Years Employed</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Plumber</td>
+                        <td>Mario Mario</td>
+                        <td>mmario@yahoo.com</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Luigi Mario</td>
+                        <td>lmario@yahoo.com</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Exterminator</td>
+                        <td>Bones Skullton</td>
+                        <td>bskullton@gmail.com</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Marrow Blackbeak</td>
+                        <td>mblackbeak@gmail.com</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Kathrine Whiskers</td>
+                        <td>kwhiskers@gmail.com</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Spike Prickly</td>
+                        <td>sprickly@gmail.com</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Boss</td>
+                        <td>Carlos Baza</td>
+                        <td>cbaza@aol.com</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>Callie Baza</td>
+                        <td>calbaza@gmail.com</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Pest</td>
+                        <td>Chip Munkington</td>
+                        <td>cmunkington@gmail.com</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>Ratty Rodentia</td>
+                        <td>rrodentia@gmail.com</td>
+                        <td>37</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" id="totalYearsService" headers="blank">Total Years of Service:</td>
+                        <td headers="totalYearsService">144</td>
+                    </tr>
+                </table>
+            <figcaption>Employee Information Table</figcaption>
+            </figure>
         </main>
         <div data-include="components/footer.html"></div>
         <script src="scripts/include.js"></script>
