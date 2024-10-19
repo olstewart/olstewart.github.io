@@ -20,7 +20,7 @@ footer, header {
     width: 100vw;
     text-align: center;
     position: fixed;
-    color:#ecffe1;
+    color:#fffcdd;
 }
 
 footer{
@@ -117,4 +117,35 @@ tr:nth-of-type(even){
 /* Rule Overrides For Mobile Devices */
 @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
     body{padding: 200px 10px;}
+}
+
+input[type="submit"], input[type="reset"]{
+    padding: 10px;
+    margin: 5px;
+    margin-top: 10px;
+    border-width: 7px;
+    border-style: solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+input[type="submit"]{
+    background-color: #003f86;
+    border-color: #0051ad;
+    color: #fffcdd;
+}
+
+input[type="reset"]{
+    background-color:#881414;
+    border-color:#b02727;
+    color: #fffcdd;
+}
+fieldset{
+    margin: 5px;
+    border: 5px #2376a0 double;
+    padding: 10px;
+}
+fieldset p{
+    margin-top: 0;
+    font-size: large;
 }
