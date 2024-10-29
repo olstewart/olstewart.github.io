@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>All About Knitting!</title>
+        <style>
+            :root{
+                --background: #EEFBC6;
+                --background-accent: #8BBEB2;
+                --text-accent: #0D0630;
+                --text: #384E77;
+                --link: #816005;
+            }
+            html{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                background-color: var(--background);
+                padding: 0;
+                margin: 0;
+            }
+
+            p, li{
+                font-size: large;
+            }
+
+            li{
+                list-style:square;
+            }
+
+            main{
+                padding: 3%;
+                margin: 0;
+                color: var(--text);
+            }
+
+            img{
+                height: 50%;
+                max-height: 350px;
+                max-width: 400px;
+                border-radius: 5%;
+            }
+
+            figure{
+                padding: 3%;
+                width: 50%;
+            }
+
+            figcaption{
+                font-style: italic;
+                font-size: medium;
+            }
+
+            a{
+                text-decoration: none;
+                color: var(--link);
+            }
+            nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 0 5%;
+            }
+            h1{
+                text-align: center;
+                padding: 0;
+            }
+
+            h2{
+                padding: 0;
+                margin: 0;
+            }
+
+            body{
+                padding: 0;
+                margin: 0;
+            }
+
+            section{
+                position: relative;
+                z-index: 0;
+                display: none;
+            }
+            section:target{
+                z-index: 1;
+                display: inherit;
+            }
+
+            header, footer{
+                background-color: var(--background-accent);
+                color: var(--text-accent);
+                padding: .5% 5%;
+            }
+
+            header{
+                top: 0;
+            }
+            footer{
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>All About Knitting!</h1>
+            <nav><a href="#intro">Introduction</a><a href="#how-it-works">How It Works</a><a href="#what-i-like">Why I Like It</a><a href="#my-history">My History</a><a href="#where-i-learned">Where I Learned</a><a href="#its-effects">Its Effects</a></nav>
+        </header>
+        <main>
+            <p style="font-size: small;">Use the links above to navigate!</p>
+            <section id="intro">
+                <h2>What is Knitting?</h2>
+                <p>Knitting is the art of creating fabric using needles and yarn. By mastering different stitches, you can create many different shapes and textures.</p>
+                <figure>
+                    <img src="images/yarn-1.jpg" alt="Two knitting needles inside of a ball of yarn.">
+                    <figcaption>Two knitting needles inside of a ball of yarn.</figcaption>
+                </figure>
+                <p>I enjoy it quite a lot, due to how creative you need to be to create good work, and how it feels personally calming. I have been knitting for quite a long time, and yarn work has become something my friends know me by.</p>
+                
+            </section>
+            <section id="how-it-works">  
+                <h2>How Knitting Works</h2>
+                <p>Knitting is a kind of weaving that uses the yarn on one needle to hold the yarn on the other. It is typically done from right to left and then turned, meaning your left needle holds the stitches from the previous row as your right needle creates the new stitches.</p>
+                <figure>
+                    <img src="images/yarn-2.jpg" alt="Knitting needles holding knitwork.">
+                    <figcaption>The new row, shown in dark blue, is on the right needle. These loops close the lighter-colored stitches from the left needle while creating new ones.</figcaption>
+                </figure>
+                <p>Once the row is finished, the needles are swapped between your hands and a new row is started.</p>
+                <p>The physical length of a row is determined by the number of stitches it has. So, to create shapes, you can change the amount of stitches used in some rows. Special stitches called "increases" and "decreases" can add or take away stitches and change the length of their rows.</p>
+                <figure>
+                    <img src="images/yarn-3.jpg" alt="A dark blue triangle knitting on top of a cyan square.">
+                    <figcaption>Using decreases every 3rd row, I have added a triangle to this rectangular knitwork.</figcaption>
+                </figure>
+            </section>
+            <section id="what-i-like">
+                <h2>Why I like Knitting</h2>
+                <p>Here are a few things I really like about knitting:</p>
+                <ul>
+                    <li>It's easy to learn. There are only two basic stitches you need to know to knit. Knit stitches, which create the front side of the work, and purl stitches, which create the back side. While there are some more complex stitches you can also learn, they are all also based on knitting or purling, and you don't absolutely need them to create something nice.</li>
+                    <li>
+                        It's easy to make colorful. Switching colors is made easier with knitting than it would be in some other forms of yarnwork, which allows me to more easily make complex knitting designs.
+                        <figure>
+                            <img src="images/my-knitwork-1.jpg" alt="Peice of knit fabric depicting two rats in the shape of a heart.">
+                            <figcaption>My most complex work to date. It has ten different colors of yarn!</figcaption>
+                        </figure>
+                    </li>
+                    <li>I can do it passively. I like to watch movies, listen to YouTube videos, and even read books while I knit. It keeps my fidgety hands busy so I can focus, with the added bonus of getting something nice out of it.</li>
+                    <li>It teaches you to be patient and disciplined. Creating finished knitwork often takes days, weeks, or even longer. I spent two months over the summer knitting a blanket for my mother. Even when if gets frustrating, or when you think your knitwork won't come out well, you have to stick it out. The only other option is to not have the knitwork you wanted to create!</li>
+                </ul>
+            </section>
+            <section id="my-history">
+                <h2>My History with Knitting</h2>
+                <p>I learned to knit in my 7th grade art class, following 3 minute tutorials with mechanical pencils for needles and embrodery floss as yarn. I created a terrible peice of raggedy fabric less than 4 inches large, and I knew I could do better. So I did. My next project was a "blanket" using real orange and black yarn this time, but the pencils were still my tools of choice. I gave up after two squares, but my interest was reignited when my grandmother was giving away old knitting supplies she never used. I also learned to crochet, which took priority for a while, as crocheting is way faster than knitting. As I got to college though, I began to miss the slowness of knitting, and crocheting gave me finger cramps in a way knitting didn't. I got back into knitting because the fabric was thinner and better for creating garments. My next big project is to knit a sweater or two, but I'm also currently working on an application that can make creating knitting patterns more streamlined!</p>
+                <figure>
+                    <img src="images/bad-knitwork.jpg" alt="Loose knitwork hanging on a mechanical pencil.">
+                    <figcaption>An attempt to recreate the less-than-stellar beginnings of my knitwork. Unfortunately, this one is missing the giant holes from dropping stitches.</figcaption>
+                </figure>
+            </section>
+            <section id="where-i-learned">
+                <h2>Where I Learned To Knit</h2>
+                <p>I mostly learned to knit from online resources:</p>
+                <ul>
+                    <li>YouTube</li>
+                    <li>Knitting and crochet blogs</li>
+                    <li>Free patterns with detailed instructions for beginners</li>
+                </ul>
+                <p>But some other great resources for knitting were starter kits for beginners. Both Hobby Lobby and Barnes and Noble sell plenty of knitting kits for beginners that are easy to follow and can create some really cute peices. There are often knitting and crochet patterns on the side of packaged yarn as well. A lot of my bigger projects were created from patterns found there, including a full length blanket.</p>
+                <figure>
+                    <img src="images/blanket.jpg" alt="A large knitted blanket.">
+                    <figcaption>I got the pattern for this huge planket from the side of the wrapping on Bernat Blanket yarn.</figcaption>
+                </figure>
+            </section>
+            <section id="its-effects">
+                <h2>The Effect that Knitting has had on Me</h2>
+                <p>Learning to knit gives you plenty of projects to make. I don't have much personal use for them, so I've taken to giving away most of my work as gifts!</p>
+                <figure>
+                    <img src="images/my-knitwork-2.jpg" alt="Knitted plush shark.">
+                    <figcaption>A knitted shark plushie I gifted to my boyfriend.</figcaption>
+                </figure>
+                <p>It makes me very happy to give away cute custom gifts and trinkets to my friends, so much so that I really don't even want to knit for myself. I don't even see the point in creating something I'll just let sit on a shelf. Knitting has made me a much more creative and giving person!</p>
+            </section>
+        </main>
+        <footer>
+            <p>Created by <a href="../olstewartdesignco.com/index.html">Onyae' Stewart</a>, copyright 2024. All images taken by me.</p>
+        </footer>
+    </body>
+</html>
