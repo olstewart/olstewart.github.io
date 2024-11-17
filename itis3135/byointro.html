@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Build Your Own Introduction</title>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+        <link href="styles/default.css" rel="stylesheet">
+    </head>
+    <body>
+        <div data-include="components/header.html"></div>
+        <main>           
+            <div id="introduction-output"></div>
+            <form id="input-form">
+                <fieldset>
+                    <label for="user-name">Name: </label>
+                    <input type="text" id="user-name" name="user-name" placeholder="John Doe" required>
+                    <br>
+    
+                    <label for="mascot">Mascot: </label>
+                    <input type="text" id="mascot" name="mascot" placeholder="Jealous Dingo" required>
+                    <br>
+    
+                    <label for="image">Image: </label>
+                    <input type="file" id="image" name="image" required>
+                    <br>
+    
+                    <label for="caption">Caption: </label>
+                    <input type="text" id="caption" name="caption" placeholder="A picture of me" required>
+                </fieldset>
+                <fieldset>
+                    <label for="personal-background">Personal Background: </label>
+                    <input type="text" id="personal-background" name="personal-background" placeholder="Surfer who loves dogs" required>
+                    <br>
+    
+                    <label for="professional-background">Professional Background: </label>
+                    <input type="text" id="professional-background" name="professional-background" placeholder="Four years in magazine photography" required>
+                    <br>
+    
+                    <label for="academic-background">Academic Background: </label>
+                    <input type="text" id="academic-background" name="academic-background" placeholder="Working on a second Bachelor's" required>
+                    <br>
+    
+                    <label for="web-background">Background in Web Development: </label>
+                    <input type="text" id="web-background" name="web-background" placeholder="Learned JavaScript last year" required>
+                    <br>
+    
+                    <label for="primary-platform">Primary Computer Platform: </label>
+                    <input type="text" id="primary-platform" name="primary-platform" placeholder="Windows 8" required>
+                </fieldset>
+                <fieldset id="current-courses">
+                    <p>Current Courses:</p>  
+                    <label for="course-1">Course 1: </label>
+                    <input class="course" type="text" id="course-1" name="course-1" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+                    <label for="course-2">Course 2: </label>
+                    <input class="course" type="text" id="course-2" name="course-2" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+                    <label for="course-3">Course 3: </label>
+                    <input class="course" type="text" id="course-3" name="course-3" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+                    <label for="course-4">Course 4: </label>
+                    <input class="course" type="text" id="course-4" name="course-4" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+                    <label for="course-5">Course 5: </label>
+                    <input class="course" type="text" id="course-5" name="course-5" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+                    <label for="course-6">Course 6: </label>
+                    <input class="course" type="text" id="course-6" name="course-6" placeholder="SUBJ 123 - Subject Name">
+                    <br>
+    
+                </fieldset>
+                <fieldset>
+                    <label for="funny-thing">Funny thing about you: </label>
+                    <input type="text" id="funny-thing" name="funny-thing" placeholder="My left foot is longer than my right">
+                    <br>
+                    <label for="extra">Anything else?: </label>
+                    <input type="text" id="extra" name="extra" placeholder="My favorite food is pizza">
+                    <br>
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">"I understand that what is on this page is not password protected and I will not put anything here that I do not want publicly available."</label>
+                </fieldset>
+                <input type="submit" id="submit" value="Submit">
+                <input type="reset" id="reset" value="Reset? (Will clear ALL answers!)">
+            </form>
+        </main>
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/include.js"></script>
+        <script src="scripts/survey.js"></script>
+    </body>
+</html>
