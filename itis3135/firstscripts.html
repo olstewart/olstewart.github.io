@@ -19,6 +19,65 @@
                 <button type="submit">Submit</button>
             </form>
             <h4 id="greeting">Welcome to SharkByte!</h4>
+            <form id="polygon-form">
+                <label for="fav-number">Type in your favorite number between 1 and 10: </label>
+                <input type="number" max="10" min="1" id="fav-number">
+                <button type="submit">Submit</button>
+            </form>
+
+            <label for="materials">Enter desired material to be used in your design:</label>
+            <select id="materials" name="materials" required>
+                <option value="plastic">plastic</option>
+                <option value="fabric">fabric</option>
+                <option value="paper">paper</option>
+                <option value="cardboard">cardboard</option>
+                <option value="metal">metal</option>
+            </select>
+            <br>
+
+            <label for="pounds-material">Enter pounds of material necessary to produce your design:</label>
+            <input type="number" min=".01" id="pounds-material">
+            <br>
+
+            <label for="num-of-colors">Enter number of colors in your design:</label>
+            <input type="number" min="1" id="num-of-colors">
+            <br>
+
+            <button id="calculate-cost">Calculate Cost of Materials</button>
+            <p id="cost-result"></p>
+
+
+
+            <label for="cost-materials">Enter cost of materials:</label>
+            <input type="number" min=".01" id="cost-materials">
+            <br>
+
+            <label for="percent-profit">Enter percent of desired profit:</label>
+            <input type="number" min="1" max="100" id="percent-profit">
+            <br>
+
+            <button id="calculate-sale-price">Calculate Sale Price</button>
+            <p id="price-result"></p>
+
+
+            <label for="design-size">Enter the size of your design in inches:</label>
+            <input type="number" min=".01" id="design-size">
+            <br>
+            
+            <button id="recommend-item">Recommend an Item</button>
+            <p id="recommendation-result"></p>
+
+
+            <label for="idea-input">Type your idea in here: </label>
+            <input type="text" id="idea-input">
+            <button id="good-idea">Is my idea good?</button>
+            <p id="idea-result"></p>
+
+            <label for="budget">Enter your budget: </label>
+            <input type="number" min="0.01" id="budget">
+            <button id="too-expensive">Is my idea too expensive?</button>
+            <p id="expensive-result"></p>
+
         </main>
         <div data-include="components/footer.html"></div>
         <script src="scripts/include.js"></script>
