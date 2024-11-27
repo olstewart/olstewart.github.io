@@ -32,7 +32,6 @@ footer, header {
     text-align: center;
     position: fixed;
     color:#fffcdd;
-    font-size: small;
 }
 
 footer{
@@ -70,6 +69,10 @@ footer a:active, header a:active{
 
 footer a:visited, header a:visited{
     color: #76ff9d;
+}
+
+header nav{
+    font-size: small;
 }
 
 header nav:last-of-type{
