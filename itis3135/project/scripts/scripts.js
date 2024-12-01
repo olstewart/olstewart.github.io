@@ -10,13 +10,12 @@ const createHighlightedImage = (source) => {
     const deleteButton = document.getElementById("delete-button");
     deleteButton.addEventListener("click", () => {
         highlightedImage.innerHTML = "";
-    })
+    });
 };
-for(let i = 0; i < imageArr.length; i++){
-    console.log(imageArr[i].src);
-    const grog = imageArr[i].src;
+for (let i = 0; i < imageArr.length; i++){
+    const imageSource = imageArr[i].src;
     imageArr[i].addEventListener("click", () => {
-        createHighlightedImage(grog);
+        createHighlightedImage(imageSource);
     });
 }
 
