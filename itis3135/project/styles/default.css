@@ -5,7 +5,7 @@ body{
     margin: 0;
     background-color: #ffefd6;
 }
-header{
+header, footer{
     background-color: #4324b1;
     color: #DCCDF4;
     padding: 10px 15%;
@@ -105,6 +105,10 @@ a{
     margin: 0 auto;
 }
 
+.project-display img{
+    height: 250px;
+}
+
 .project-images{
     max-width: 1200px;
     width: 70%;
@@ -117,8 +121,16 @@ a{
 
 .project-images img{
     box-sizing: border-box;
-    width: 80%;
-    height: auto;
-    max-width: 200px;
+    height: 125px;
+    width: auto;
     margin: 10px;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.project-images img:hover{
+    transition-property: all;
+    transition-duration:200ms;
+    height: 150px;
+    box-shadow: -6px 6px #e98c5d;
 }
