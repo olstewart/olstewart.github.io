@@ -106,11 +106,19 @@ a{
 }
 
 .project-images{
+    max-width: 1200px;
+    width: 70%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .project-images img{
-    width: 150px;
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    max-width: 200px;
+    margin: 10px;
 }
