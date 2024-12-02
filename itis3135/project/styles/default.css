@@ -31,6 +31,10 @@ h4, p{
     color: #322547;
 }
 
+p{
+    font-size: large;
+}
+
 nav{
     display: flex;
     flex-direction: row;
@@ -74,10 +78,18 @@ img{
 
 .projects-bar img{
     max-width: 200px;
+    border-color: #f6e0dd;
 }
 
 .projects-bar a{
     color: #322547;
+}
+
+figcaption{
+    background-color: #f6e0dd;
+    padding: 2px;
+    border-radius: 4px;
+    text-align: center;
 }
 
 #homepage-summary{
