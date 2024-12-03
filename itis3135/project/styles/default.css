@@ -5,10 +5,18 @@ body{
     margin: 0;
     background-color: #ffefd6;
 }
-header, footer{
+header{
     background-color: #4324b1;
     color: #DCCDF4;
     padding: 10px 15%;
+}
+
+footer p{
+    font-size: small;
+}
+
+footer{
+    margin-left: 30px;
 }
 
 #front-page-main{
@@ -30,6 +38,10 @@ h2, h3{
 h4, p{
     color: #322547;
 }
+
+ h4{
+    font-size: larger;
+ }
 
 p{
     font-size: large;
@@ -78,7 +90,8 @@ img{
 
 .projects-bar img{
     max-width: 200px;
-    border-color: #f6e0dd;
+    border-color: #ffefd6;
+    max-height: auto;
 }
 
 .projects-bar a{
@@ -86,7 +99,7 @@ img{
 }
 
 figcaption{
-    background-color: #f6e0dd;
+    background-color: #ffefd6;
     padding: 2px;
     border-radius: 4px;
     text-align: center;
@@ -136,6 +149,15 @@ figcaption{
     height: 250px;
 }
 
+.project-display h2{
+    padding: 6px 0;
+}
+
+.project-display h3, .project-display h2{
+    background-color: #e98c5d;
+    border-radius: 4px;
+}
+
 .project-images-section{
     max-width: 1200px;
     width: 70%;
@@ -172,16 +194,19 @@ figcaption{
     height: 300px;
     display: block;
     margin: 0 auto;
+    border-width: 8px;
+    border-style: double;
+    border-color: #4324b1;
 }
 
 #highlighted-image button{
     border: none;
-    color: #f6e0dd;
+    color: #ffefd6;
     background-color: #db4d5b;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
     font-weight: bolder;
-    border-radius: 10%;
+    border-radius: 4px;
     display: block;
     margin: 10px auto;
 }
