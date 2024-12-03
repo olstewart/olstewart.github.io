@@ -34,28 +34,34 @@ const changeImage = (originalImage, newSource) => {
 }
 
 //Infested
-infestedPreview.addEventListener("mouseover", ()=>{
+infestedPreview.addEventListener("mouseover", () => {
     changeImage(infestedPreview, "images/infested-gif-preview.gif");
 });
 
-infestedPreview.addEventListener("mouseleave", ()=>{
-    setTimeout(()=>{changeImage(infestedPreview, infestedSrc);}, 700);
+infestedPreview.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+        changeImage(infestedPreview, infestedSrc);
+    }, 700);
 });
 
 //Spacekid
-spacekidPreview.addEventListener("mouseover", ()=>{
+spacekidPreview.addEventListener("mouseover", () => {
     changeImage(spacekidPreview, "images/spacekid-gif-preview.gif");
 });
 
-spacekidPreview.addEventListener("mouseleave", ()=>{
-    setTimeout(()=>{changeImage(spacekidPreview, spacekidSrc);}, 700);
+spacekidPreview.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+        changeImage(spacekidPreview, spacekidSrc);
+    }, 700);
 });
 
 //Fluffballs
-fluffballsPreview.addEventListener("mouseover", ()=>{
+fluffballsPreview.addEventListener("mouseover", () => {
     changeImage(fluffballsPreview, "images/fluffballs-gif-preview.gif");
 });
 
-fluffballsPreview.addEventListener("mouseleave", ()=>{
-    setTimeout(()=>{changeImage(fluffballsPreview, fluffballsSrc);}, 700);
+fluffballsPreview.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+        changeImage(fluffballsPreview, fluffballsSrc);
+    }, 700);
 });

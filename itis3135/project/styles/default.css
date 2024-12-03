@@ -35,17 +35,15 @@ h2, h3{
     text-align: center;
 }
 
-h4, p{
+p{
     color: #322547;
+    font-size: large;
 }
 
  h4{
     font-size: larger;
+    color: #322547;
  }
-
-p{
-    font-size: large;
-}
 
 nav{
     display: flex;
@@ -106,6 +104,7 @@ figcaption{
 }
 
 #homepage-summary{
+    box-sizing: border-box;
     width: 50vw;
     padding: 0 20px;
     margin: 0 auto;
