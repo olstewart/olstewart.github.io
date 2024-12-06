@@ -40,10 +40,10 @@ p{
     font-size: large;
 }
 
- h4{
+h4{
     font-size: larger;
     color: #322547;
- }
+}
 
 nav{
     display: flex;
@@ -212,4 +212,23 @@ figcaption{
     border-radius: 4px;
     display: block;
     margin: 10px auto;
+}
+
+@media screen and ( max-width: 720px )  {
+    .projects-bar {
+        display: none;
+    }
+
+    #front-page-main {
+        width: 100vw;
+        left: inherit;
+    }
+
+    #homepage-summary {
+        width: 80vw;
+    }
+
+    #homepage-summary img {
+        max-width: 40vw;
+    }
 }
