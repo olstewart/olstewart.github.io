@@ -17,7 +17,7 @@ for (let i = 0; i < imageArr.length; i++){
     imageArr[i].addEventListener("click", () => {
         createHighlightedImage(imageSource);
     });
-};
+}
 
 // This code will make a gif of the gameplay play when the mouse glides over it.
 const infestedPreview = document.getElementById("infested-preview");
