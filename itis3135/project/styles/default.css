@@ -232,3 +232,23 @@ figcaption{
         max-width: 40vw;
     }
 }
+
+@media screen and ( max-width: 475px )  {
+    nav a{
+        font-size: x-large;
+    }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    .project-previews {
+        margin-top: 80px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview img {
+        height: 30vh;
+    }
+}
