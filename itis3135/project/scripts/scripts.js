@@ -1,3 +1,4 @@
+// This code creates the photo viewer.
 const projectImages = document.getElementsByClassName("project-image");
 const imageArr = Array.from(projectImages);
 const highlightedImage = document.getElementById("highlighted-image");
