@@ -1,0 +1,30 @@
+h1,h2,h3{
+    text-align: center;
+}
+footer, header {
+    background-color: rosybrown;
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    color:maroon;
+}
+
+footer{
+    bottom: 0;
+    padding: 30px 0;
+}
+
+header{
+    top: 0;
+    padding: 10px 0;
+}
+
+main{
+    max-width: 600px;
+    margin: 120px auto;
+}
+html{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: pink;
+}
