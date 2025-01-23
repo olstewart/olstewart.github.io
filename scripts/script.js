@@ -14,8 +14,25 @@ addRowButton.addEventListener("click", () =>{
 				</div>`
 });
 
+class Stitch{
+    constructor(type, stitchSpan, stitchResult, description){
+        this.type = type;
+        this.stitchSpan = stitchSpan;
+        this.stitchResult = stitchResult;
+        this.description = description;
+    }
+
+    toString(){
+        return this.type;
+    }
+
+    toStitchUp(){
+        return "stitch:" + this.type + "," + this.stitchSpan + "," + this.stitchResult + "," + this.description;
+    }
+}
 
 
+//---COLOR SCHEME STUFF---//
 // Change color scheme
 let colorSchemes = document.getElementById("color-schemes");
 let root = document.querySelector(":root");
@@ -39,6 +56,8 @@ let colorSchemeRaisin = ["#1a1423", "#372549", "#9c637e", "#c884b7", "#eacdc2"];
 let colorSchemeBoulder = ["#252422", "#403d39", "#868179", "#ccc5b9", "#fffcf2"];
 let colorSchemeGemstone = ["#29293d", "#6b5276", "#a96da3", "#cf9893", "#cb9ab3"];
 let colorSchemeMystic = ["#24062d", "#522472", "#9887c5", "#a2c5ed", "#cefaeb"];
+let colorSchemeHedgehog = ["#101010", "#1c35d7", "#7b96ff", "#ff4f4c", "#fff2d0"];
+let colorSchemeHedgehogDark = ["#eee5aa", "#101010", "#383838", "#770000", "#aa0000"];
 
 colorSchemes.addEventListener("change", () => {
     switch(colorSchemes.value){
@@ -92,6 +111,12 @@ colorSchemes.addEventListener("change", () => {
         } break;
         case "mystic":{
             setColorScheme(colorSchemeMystic);
+        } break;
+        case "hedgehog":{
+            setColorScheme(colorSchemeHedgehog);
+        } break;
+        case "hedgehog-dk":{
+            setColorScheme(colorSchemeHedgehogDark);
         } break;
         default:{
             setColorScheme(colorSchemeDefault);

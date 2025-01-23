@@ -47,6 +47,10 @@ p{
     color: var(--black);
 }
 
+label{
+    color: var(--black);
+}
+
 main{
     max-width: 600px;
     margin: 120px auto;
