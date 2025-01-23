@@ -1,13 +1,36 @@
-h1,h2,h3{
-    text-align: center;
+:root{
+    --black: #022327;
+    --dk-color: #087E8B;
+    --lt-color: #acecc6;
+    --dk-white: #d6f6e3;
+    --white: #eefbf4;
 }
+
+h1{
+    text-align: center;
+    color: var(--white);
+}
+
+h2,h3{
+    text-align: center;
+    color: var(--black);
+}
+
 footer, header {
-    background-color: rosybrown;
+    background-color: var(--dk-color);
     width: 100vw;
     text-align: center;
     position: fixed;
     left: 0;
-    color:maroon;
+    color: var(--white);
+}
+
+footer a, header a{
+    color: var(--white);
+}
+
+footer a:visited, header a:visited{
+    color: var(--lt-color);
 }
 
 footer{
@@ -20,11 +43,44 @@ header{
     padding: 10px 0;
 }
 
+p{
+    color: var(--black);
+}
+
 main{
     max-width: 600px;
     margin: 120px auto;
 }
 html{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: pink;
+    background-color: var(--lt-color);
+}
+
+#main-container{
+    box-sizing: border-box;
+}
+
+.row{
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--black) solid 2px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1px;
+}
+
+.row p{
+    margin: 0;
+    padding: 2px;
+}
+
+.row-label{
+    min-width: fit-content;
+    background-color: var(--dk-white);
+}
+
+.instructions{
+    border-left: var(--black) solid 2px;
+    display: inline-block;
+    width: fit-content;
 }
