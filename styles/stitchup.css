@@ -4,6 +4,7 @@
     --lt-color: #acecc6;
     --dk-white: #d6f6e3;
     --white: #eefbf4;
+    --red: crimson;
 }
 
 h1{
@@ -14,6 +15,7 @@ h1{
 h2,h3{
     text-align: center;
     color: var(--black);
+    margin: 5px 0;
 }
 
 footer, header {
@@ -29,18 +31,17 @@ footer a, header a{
     color: var(--white);
 }
 
-footer a:visited, header a:visited{
+footer a:hover, header a:hover{
     color: var(--lt-color);
 }
 
 footer{
     bottom: 0;
-    padding: 30px 0;
+    padding: 8px 0;
 }
 
 header{
     top: 0;
-    padding: 10px 0;
 }
 
 p{
@@ -52,8 +53,8 @@ label{
 }
 
 main{
-    max-width: 600px;
-    margin: 120px auto;
+    max-width: 800px;
+    margin: 100px auto;
 }
 html{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -65,16 +66,16 @@ html{
 }
 
 .row{
+    margin-top: 2px;
     color: var(--black);
     background-color: var(--white);
     border: var(--black) solid 2px;
     display: flex;
     flex-direction: row;
-    margin-bottom: 1px;
+    justify-content: space-between;
 }
 
 .row p{
-    margin: 0;
     padding: 2px;
 }
 
@@ -84,7 +85,104 @@ html{
 }
 
 .instructions{
+    margin-right: auto;
     border-left: var(--black) solid 2px;
-    display: inline-block;
+}
+
+button, input[type="submit"], input[type="reset"]{
+    background-color: var(--dk-color);
+    color: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    margin: 3px;
+    min-height: max-content;
+    padding: 3px;
+    font-weight: bolder;
+    font-size: large;
+    min-width: fit-content;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: var(--black);
+}
+
+.row-btn{
+    min-width: 3vw;
+    margin-right: calc(auto - 3px);
+}
+
+.delete-row-btn, .delete-stitch-btn{
+    background-color: var(--red);
+}
+
+.delete-stitch-btn{
+    margin-right: calc(auto - 3px);
+    padding: 3px;
+}
+
+#pattern-title:hover{
+    color: var(--dk-color);
+}
+
+#title-edit-form{
+    display: none;
+}
+
+.row-edit-container{
+    display: none;
+    flex-direction: column;
+    border: solid 2px var(--black);
+    border-top: none;
+    background-color: var(--white);
+    width: 95%;
+    justify-self: right;
+}
+
+.stitch p:hover{
+    background-color: var(--dk-white);
+}
+
+#stitch-edit, #special-instruction-edit{
+    background-color: var(--dk-white);
+    display: none;
+    padding: 3px;
+}
+
+.stitch{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 2px var(--dk-white);
+}
+
+.stitch p{
+    margin: 0 3px;
+    width: 100%;
+    padding: 2px 5px 0 2px;
+}
+
+#stitch-edit-form input, #special-instruction-edit-form input{
+    max-width: 10%;
+}
+
+#pattern-display, #stitchup-display{
+    display: none;
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--black) solid 3px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+details{
+    color: var(--black);
+    background-color: var(--dk-white);
     width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+#copy-row input{
+    width: 5vw;
 }
