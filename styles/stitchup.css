@@ -79,6 +79,7 @@ html{
     padding: 2px;
 }
 
+
 .row-label{
     min-width: fit-content;
     background-color: var(--dk-white);
@@ -111,11 +112,11 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
     margin-right: calc(auto - 3px);
 }
 
-.delete-row-btn, .delete-stitch-btn{
+.delete-row-btn, .delete-stitch-btn, .delete-pattern-stitch-btn{
     background-color: var(--red);
 }
 
-.delete-stitch-btn{
+.delete-stitch-btn, .delete-pattern-stitch-btn{
     margin-right: calc(auto - 3px);
     padding: 3px;
 }
@@ -180,9 +181,59 @@ details{
     width: fit-content;
     padding: 5px;
     border-radius: 5px;
-    margin: 3px;
+    margin: 3px auto;
 }
 
 #copy-row input{
-    width: 5vw;
+    width: 7%;
+}
+
+#copy-row{
+    display: inline-block;
+}
+
+#display-btn, #stitchup-btn{
+    margin-top: 2vh;
+}
+
+#stitch-list-container{
+    width: 100%;
+    justify-self: left;
+    background-color: var(--white);
+    border: 2px var(--black) solid;
+    border-radius: 5px;
+}
+
+.pattern-stitch{
+    display: flex;
+    flex-direction: row;
+}
+
+.pattern-stitch p{
+    margin: 0 2px;
+    padding: 2px;
+    border-bottom: solid 2px var(--dk-white);
+    width: 100%;
+}
+
+.pattern-stitch p:hover{
+    background-color: var(--dk-white);
+}
+
+.delete-pattern-stitch-btn{
+    margin-left: auto;
+}
+
+#pattern-stitch-edit-form{
+    display: none;
+    background-color: var(--dk-white);
+}
+
+#view-edit-pattern-stitches{
+    margin: 10px 0;
+    width: 100%
+}
+
+#pattern-stitch-edit-form input{
+    width: 10%;
 }

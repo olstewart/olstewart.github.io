@@ -283,6 +283,14 @@ class Pattern{
         this.rows.splice(index, 1);
         this.rowsEditing.splice(index, 1);
     }
+
+    /**
+     * 
+     * @param {integer} index 
+     */
+    removeStitch(index){
+        this.stitchList.splice(index, 1);
+    }
 }
 
 
@@ -320,7 +328,13 @@ let copyRow = document.getElementById("copy-row");
 let copyRowFrom = document.getElementById("copy-row-from");
 let copyRowTo = document.getElementById("copy-row-to");
 
-
+let stitchListContainer = document.getElementById("stitch-list-container");
+let patternStitchEditForm = document.getElementById("pattern-stitch-edit-form");
+let patternStitchName = document.getElementById("pattern-stitch-name");
+let patternStitchDescription = document.getElementById("pattern-stitch-description");
+let patternStitchSpan = document.getElementById("pattern-stitch-span");
+let patternStitchResult = document.getElementById("pattern-stitch-result");
+let addPatternStitchButton = document.getElementById("add-pattern-stitch-button");
 
 //editing pattern name
 let titleEditForm = document.getElementById("title-edit-form");
@@ -364,10 +378,17 @@ let sillyDebugCounterHaha = 0;
 const updatePatternDisplay = (pattern) => {
     let rowsHtml = ``;
     for(let i = 0; i < pattern.rows.length; i++){
-        let stitchesHtml = ``;
+        let instructionsHTML = ``;
         for(let j = 0; j < pattern.rows[i].instructions.length; j++){
-            stitchesHtml +=
-            `<div class="stitch" id="row-${i+1}-stitch-${j+1}"><p id="p-row-${i+1}-stitch-${j+1}">${pattern.rows[i].instructions[j].toString()}</p><button class="delete-stitch-btn" id="delete-row-${i+1}-stitch-${j+1}">x</button></div>
+            let instructionStr = "";
+            if(pattern.rows[i].instructions[j] instanceof Instruction){
+                instructionStr = pattern.rows[i].instructions[j].toString();
+            }
+            else if(pattern.rows[i].instructions[j] instanceof SpecialInstruction){
+                instructionStr = pattern.rows[i].instructions[j].toString() + ", spans " + pattern.rows[i].instructions[j].stitchSpan + " sts, results in " + pattern.rows[i].instructions[j].stitchResult + " sts";
+            }
+            instructionsHTML +=
+            `<div class="stitch" id="row-${i+1}-stitch-${j+1}"><p id="p-row-${i+1}-stitch-${j+1}">${instructionStr}</p><button class="delete-stitch-btn" id="delete-row-${i+1}-stitch-${j+1}">x</button></div>
             <div id="stitch-edit-container-row-${i+1}-stitch-${j+1}"></div>`;
         }
 
@@ -383,7 +404,7 @@ const updatePatternDisplay = (pattern) => {
             <button class="delete-row-btn row-btn" id="delete-row-btn-${i+1}">x</button>
         </div>
         <div class="row-edit-container" id="row-edit-container-${i+1}">
-            ${stitchesHtml}
+            ${instructionsHTML}
             <button class="add-instruction-btn" id="add-instruction-btn-${i+1}">Add Instruction</button>
             <button class="add-special-instruction-btn" id="add-special-instruction-btn-${i+1}">Add Special Instruction</button>
         </div>`;
@@ -423,8 +444,13 @@ const updatePatternDisplay = (pattern) => {
 
         //Adding instruction
         document.getElementById(`add-instruction-btn-${i+1}`).addEventListener("click", () => {
-            pattern.rows[i].addInstruction(new Instruction(pattern.stitchList[0], 1, "none"));
-            updatePatternDisplay(pattern);
+            if(pattern.stitchList.length < 1){
+                alert("This pattern has no stitches to choose from!");
+            }
+            else{
+                pattern.rows[i].addInstruction(new Instruction(pattern.stitchList[0], 1, "none"));
+                updatePatternDisplay(pattern);
+            }
         });
 
         //Adding special instruction
@@ -437,6 +463,7 @@ const updatePatternDisplay = (pattern) => {
         // All stitches get these click events
         for(let j = 0; j < pattern.rows[i].instructions.length; j++){
             document.getElementById(`p-row-${i+1}-stitch-${j+1}`).addEventListener("click", () => {
+                // Edit instruction
                 if (pattern.rows[i].instructions[j] instanceof Instruction){
                     let parentID = stitchEditor.parentElement.id;
                     let prevRowIndex = stitchEditor.parentElement.parentElement.id.replace("row-edit-container-", "");
@@ -465,6 +492,7 @@ const updatePatternDisplay = (pattern) => {
                         specialInstructionEditor.style.display = "none";
                     }
                 }
+                // Edit special instruction
                 else if (pattern.rows[i].instructions[j] instanceof SpecialInstruction){
                     let parentID = specialInstructionEditor.parentElement.id;
                     let prevRowIndex = specialInstructionEditor.parentElement.parentElement.id.replace("row-edit-container-", "");
@@ -496,7 +524,6 @@ const updatePatternDisplay = (pattern) => {
                 let deleteBtn = document.getElementById(`delete-row-${i+1}-stitch-${j+1}`);
                 let rowIndex = deleteBtn.parentElement.parentElement.id.replace("row-edit-container-", "") - 1;
                 let stitchIndex = deleteBtn.id.replace(`delete-row-${rowIndex+1}-stitch-`, "") - 1;
-                console.log(rowIndex + ", " +  stitchIndex)
                 pattern.rows[rowIndex].removeInstruction(stitchIndex);
                 updatePatternDisplay(pattern);
 
@@ -504,6 +531,8 @@ const updatePatternDisplay = (pattern) => {
                 stitchEditor.style.display = "none";
                 main.appendChild(specialInstructionEditor);
                 specialInstructionEditor.style.display = "none";
+                patternToStringDisplay.innerText = p.toString();
+                patternStitchUpDisplay.innerText = p.toStitchUp();
             });
         }
         main.appendChild(stitchEditor);
@@ -512,7 +541,100 @@ const updatePatternDisplay = (pattern) => {
         main.appendChild(specialInstructionEditor);
         specialInstructionEditor.style.display = "none";
     }
+    patternToStringDisplay.innerText = p.toString();
+    patternStitchUpDisplay.innerText = p.toStitchUp();
 }
+
+const updateStitchDisplay = (pattern) => {
+    let stitchesHTML = ``;
+    for(let i = 0; i < pattern.stitchList.length; i++){
+        stitchesHTML += 
+        `<div class="pattern-stitch" id="pattern-stitch-${i+1}">
+        <p id="p-pattern-stitch-${i+1}">${pattern.stitchList[i].toString()}, ${pattern.stitchList[i].description}, spans ${pattern.stitchList[i].stitchSpan} sts, results in ${pattern.stitchList[i].stitchResult} sts</p>
+        <button class="delete-pattern-stitch-btn" id="delete-pattern-stitch-${i+1}">x</button>
+        </div>
+        <div id="pattern-stitch-edit-container-${i+1}"></div>`;
+    }
+    stitchListContainer.innerHTML = stitchesHTML;
+
+    // Post creation: editing and deleting
+    for(let i = 0; i < pattern.stitchList.length; i++){
+        //editing
+        document.getElementById(`p-pattern-stitch-${i+1}`).addEventListener("click", () => {
+            document.getElementById(`pattern-stitch-edit-container-${i+1}`).appendChild(patternStitchEditForm);
+            patternStitchEditForm.style.display = "block";
+            for(let x = 0; x < pattern.stitchList.length; x++){
+                document.getElementById(`pattern-stitch-${x+1}`).style.backgroundColor = "var(--white)";
+            }
+            document.getElementById(`pattern-stitch-${i+1}`).style.backgroundColor = "var(--dk-white)";
+        });
+        //deleting
+        document.getElementById(`delete-pattern-stitch-${i+1}`).addEventListener("click", () => {
+            let deletionAllowed = true;
+            for(let x = 0; x < pattern.rows.length; x++){
+                for(let y = 0; y < pattern.rows[x].instructions.length; y++){
+                    if(pattern.rows[x].instructions[y].stitch == pattern.stitchList[i]){
+                        deletionAllowed = false;
+                    }
+                }
+            }
+            if(deletionAllowed){
+                pattern.removeStitch(i);
+                updateStitchDisplay(pattern);
+                patternStitchEditForm.style.display = "none";
+                main.appendChild(patternStitchEditForm);
+                patternStitchUpDisplay.innerText = pattern.toStitchUp();
+                
+            }else{
+                alert("You cannot delete a stitch currently being used in this pattern.")
+            }
+        });
+    }
+}
+
+updateStitchDisplay(p);
+
+patternStitchEditForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let stitchIndex = patternStitchEditForm.parentElement.id.replace("pattern-stitch-edit-container-", "") - 1;
+    if(patternStitchName.value){
+        p.stitchList[stitchIndex].type = patternStitchName.value;
+    }
+    if(patternStitchDescription.value){
+        p.stitchList[stitchIndex].description = patternStitchDescription.value;
+    }
+    if(patternStitchSpan.value){
+        p.stitchList[stitchIndex].stitchSpan = patternStitchSpan.value;
+    }
+    if(patternStitchResult.value){
+        p.stitchList[stitchIndex].stitchResult = patternStitchResult.value;
+    }
+    updateStitchDisplay(p);
+    updatePatternDisplay(p);
+    patternStitchEditForm.style.display = "none";
+    main.appendChild(patternStitchEditForm);
+    for(let x = 0; x < p.stitchList.length; x++){
+        document.getElementById(`pattern-stitch-${x+1}`).style.backgroundColor = "var(--white)";
+    }
+});
+
+patternStitchEditForm.addEventListener("reset", () => {
+    patternStitchName.value = "";
+    patternStitchDescription.value = "";
+    patternStitchSpan.value = "";
+    patternStitchResult.value = "";
+    patternStitchEditForm.style.display = "none";
+    main.appendChild(patternStitchEditForm);
+    for(let x = 0; x < p.stitchList.length; x++){
+        document.getElementById(`pattern-stitch-${x+1}`).style.backgroundColor = "var(--white)";
+    }
+});
+
+addPatternStitchButton.addEventListener("click", () => {
+    p.stitchList.push(new Stitch("New Stitch", 0, 0, "none"));
+    updateStitchDisplay(p);
+    patternStitchUpDisplay.innerText = p.toStitchUp();
+});
 
 
 stitchEditForm.addEventListener("submit", (e) => {
@@ -546,7 +668,10 @@ stitchEditForm.addEventListener("reset", () => {
     document.getElementById(`row-${rowIndex}-stitch-${stitchIndex}`).style.backgroundColor = "var(--white)";
     main.appendChild(stitchEditor);
     stitchEditor.style.display = "none";
-})
+});
+
+
+
 
 specialInstructionEditForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -604,41 +729,46 @@ stitchUpButton.addEventListener("click", () => {
 
 importPatternForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    let newPattern = new Pattern("");
-    let input = importInput.value.split("\n");
-    newPattern.patternName = input[0];
-    let i = 1;
-    while(input[i]){
-        if(input[i].startsWith("stitch:")){
-            input[i] = input[i].replace("stitch:", "");
-            let stitchStrings = input[i].split(",");
-            newPattern.stitchList.splice(newPattern.stitchList.length, 0, (new Stitch(stitchStrings[0], parseInt(stitchStrings[1]), parseInt(stitchStrings[2]), stitchStrings[3])));
-        }else{
-            let row = input[i].split(",,");
-            let instructions = [];
-            for(let x = 0; x < row.length; x++){
-                if(row[x].startsWith("@sp@")){
-                    row[x] = row[x].replace("@sp@", "");
-                    let instructionStrings = row[x].split(",");
-                    instructions.push(new SpecialInstruction(instructionStrings[0], parseInt(instructionStrings[1]), parseInt(instructionStrings[2])));
-                }
-                else{
-                    let instructionStrings = row[x].split(",");
-                    for(let z = 0; z < newPattern.stitchList.length; z++){
-                        if (newPattern.stitchList[z].type == instructionStrings[0]){
-                            instructions.push(new Instruction(newPattern.stitchList[z], parseInt(instructionStrings[1]), instructionStrings[2]));
+    if(importInput.value != ""){
+        let newPattern = new Pattern("");
+        let input = importInput.value.split("\n");
+        newPattern.patternName = input[0];
+        let i = 1;
+        while(input[i]){
+            if(input[i].startsWith("stitch:")){
+                input[i] = input[i].replace("stitch:", "");
+                let stitchStrings = input[i].split(",");
+                newPattern.stitchList.splice(newPattern.stitchList.length, 0, (new Stitch(stitchStrings[0], parseInt(stitchStrings[1]), parseInt(stitchStrings[2]), stitchStrings[3])));
+            }else{
+                let row = input[i].split(",,");
+                let instructions = [];
+                for(let x = 0; x < row.length; x++){
+                    if(row[x].startsWith("@sp@")){
+                        row[x] = row[x].replace("@sp@", "");
+                        let instructionStrings = row[x].split(",");
+                        instructions.push(new SpecialInstruction(instructionStrings[0], parseInt(instructionStrings[1]), parseInt(instructionStrings[2])));
+                    }
+                    else{
+                        let instructionStrings = row[x].split(",");
+                        for(let z = 0; z < newPattern.stitchList.length; z++){
+                            if (newPattern.stitchList[z].type == instructionStrings[0]){
+                                instructions.push(new Instruction(newPattern.stitchList[z], parseInt(instructionStrings[1]), instructionStrings[2]));
+                            }
                         }
                     }
-                }
 
+                }
+                newPattern.addRow(new Row());
+                newPattern.rows[newPattern.rows.length - 1].instructions = instructions;
             }
-            newPattern.addRow(new Row());
-            newPattern.rows[newPattern.rows.length - 1].instructions = instructions;
-        }
-    i++;}
-    console.log(newPattern.toString())
-    p = newPattern;
-    updatePatternDisplay(p);
+        i++;}
+        p = newPattern;
+        updatePatternDisplay(p);
+        updateStitchDisplay(p);
+    }
+    else{
+        alert("Please copy the contents of a StitchUp file and paste it in the import box below.")
+    }
 });
 
 

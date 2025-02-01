@@ -100,6 +100,28 @@
 				<input type="number" name="copy-row-to" id="copy-row-to">
 			</form>
 			<br>
+
+			<form id="pattern-stitch-edit-form">
+				<label for="pattern-stitch-name">Name:</label>
+				<input type="text" name="pattern-stitch-name" id="pattern-stitch-name">
+				<label for="pattern-stitch-description">Description:</label>
+				<input type="text" name="pattern-stitch-description" id="pattern-stitch-description">
+				<label for="pattern-stitch-span">Stitch span:</label>
+				<input type="number" name="pattern-stitch-span" id="pattern-stitch-span">
+				<label for="pattern-stitch-result">Stitch result:</label>
+				<input type="number" name="pattern-stitch-result" id="pattern-stitch-result">
+				<br>
+				<input type="submit" id="special-instruction-edit-submit" value="Save">
+				<input type="reset" id="special-instruction-edit-cancel-btn" value="Cancel">
+			</form>
+			<details id="view-edit-pattern-stitches">
+				<summary>View/Edit Pattern Stitches</summary>
+				<div id="stitch-list-container">
+				</div>
+				<button id="add-pattern-stitch-button">Add Stitch</button><br>
+			</details>
+			
+
 			<button id="display-btn">Display Pattern</button>
 			<button id="stitchup-btn">StitchUp File</button>
 			<div id="pattern-display"></div>
