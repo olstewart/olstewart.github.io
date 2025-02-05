@@ -336,6 +336,8 @@ let patternStitchSpan = document.getElementById("pattern-stitch-span");
 let patternStitchResult = document.getElementById("pattern-stitch-result");
 let addPatternStitchButton = document.getElementById("add-pattern-stitch-button");
 
+let siteTitle = document.getElementById("site-title");
+
 //editing pattern name
 let titleEditForm = document.getElementById("title-edit-form");
 let newTitle = document.getElementById("new-title");
@@ -376,6 +378,7 @@ let sillyDebugCounterHaha = 0;
  * @param {Pattern} pattern 
  */
 const updatePatternDisplay = (pattern) => {
+    siteTitle.innerText = "StitchUp! - " + pattern.patternName;
     let rowsHtml = ``;
     for(let i = 0; i < pattern.rows.length; i++){
         let instructionsHTML = ``;
