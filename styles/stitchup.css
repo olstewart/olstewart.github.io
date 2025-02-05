@@ -105,6 +105,7 @@ button, input[type="submit"], input[type="reset"]{
 
 button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
     background-color: var(--black);
+    cursor: pointer;
 }
 
 .row-btn{
@@ -123,6 +124,7 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover{
 
 #pattern-title:hover{
     color: var(--dk-color);
+    cursor: pointer;
 }
 
 #title-edit-form{
@@ -182,6 +184,10 @@ details{
     padding: 5px;
     border-radius: 5px;
     margin: 3px auto;
+}
+
+details:hover{
+    cursor: pointer;
 }
 
 #copy-row input{

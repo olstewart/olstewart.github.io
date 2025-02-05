@@ -805,7 +805,7 @@ let colorSchemes = document.getElementById("color-schemes");
 let root = document.querySelector(":root");
 
 // Color schemes are organised in order of 
-// --color-scheme-name, --black, --dk-color, --lt-color, --dk-white, --white
+// --color-scheme-name, --black, --dk-color, --lt-color, --dk-white, --white, --red(for close buttons)
 let colorSchemeDefault = ["#022327", "#087E8B", "#acecc6", "#d6f6e3", "#eefbf4", "crimson"];
 let colorSchemeBlue = ["#001242", "#183b67", "#62c0dc", "#c4ecf1", "#f1fffa", "crimson"];
 let colorSchemeCafe = ["#32292f", "#705d56", "#70abaf", "#99e1d9", "#f0f7f4", "crimson"];
@@ -824,7 +824,7 @@ let colorSchemeBoulder = ["#252422", "#403d39", "#868179", "#ccc5b9", "#fffcf2",
 let colorSchemeGemstone = ["#29293d", "#6b5276", "#a96da3", "#cf9893", "#cb9ab3", "crimson"];
 let colorSchemeMystic = ["#24062d", "#522472", "#9887c5", "#a2c5ed", "#cefaeb", "crimson"];
 let colorSchemeHedgehog = ["#240507", "#d61f28", "#1447e1", "#E7D1B1", "#b8c6f4", "#8F141B"];
-let colorSchemeHedgehogDark = ["#eee5aa", "#101010", "#404040", "#880000", "#aa0000", "#404040"];
+let colorSchemeHedgehogDark = ["#000020", "#101020", "#990000", "#efd044", "#aaaaaa", "crimson"];
 
 
 colorSchemes.addEventListener("change", () => {
